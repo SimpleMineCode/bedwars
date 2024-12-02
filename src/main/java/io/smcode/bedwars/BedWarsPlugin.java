@@ -7,7 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BedWarsPlugin extends JavaPlugin {
     // TODO: Add messages
-    // TODO: Create locations.yml and save lobby location
 
     @Override
     public void onEnable() {

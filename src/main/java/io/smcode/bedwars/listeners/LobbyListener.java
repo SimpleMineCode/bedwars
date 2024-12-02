@@ -3,9 +3,12 @@ package io.smcode.bedwars.listeners;
 import io.smcode.bedwars.game.GameManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerAttemptPickupItemEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
@@ -27,6 +30,24 @@ public class LobbyListener implements Listener {
             event.setSpawnLocation(this.gameManager.getLobby());
 
         this.gameManager.join(event.getPlayer());
+    }
+
+    @EventHandler
+    public void onPickUp(BlockPlaceEvent event) {
+        if (this.gameManager.getGameState() == IN_LOBBY)
+            event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onPickUp(BlockBreakEvent event) {
+        if (this.gameManager.getGameState() == IN_LOBBY)
+            event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onPickUp(PlayerAttemptPickupItemEvent event) {
+        if (this.gameManager.getGameState() == IN_LOBBY)
+            event.setCancelled(true);
     }
 
     @EventHandler
