@@ -1,4 +1,6 @@
 package io.smcode.bedwars;
 
-public class BedwarsPlugin {
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class BedWarsPlugin extends JavaPlugin {
 }
