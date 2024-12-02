@@ -1,5 +1,5 @@
 name: BedWars
 author: SMCode
-version: 1.0
+version: ${version}
 api-version: 1.13
 main: io.smcode.bedwars.BedWarsPlugin
