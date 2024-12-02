@@ -3,3 +3,7 @@ author: SMCode
 version: ${version}
 api-version: 1.13
 main: io.smcode.bedwars.BedWarsPlugin
+
+commands:
+  setlobby:
+    description: Set lobby spawn point
